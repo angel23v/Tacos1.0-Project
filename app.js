@@ -64,14 +64,6 @@ const extras = document.querySelectorAll('.extras');
 const bebidasSinAlchol = document.querySelectorAll('.bebidasNA');
 const alcholicas = document.querySelectorAll('.alcholicas');
 
-const setLocalStorageTotal = function (total, noMesa) {
-  localStorage.setItem(`mesa${noMesa}T`, JSON.stringify(total));
-};
-
-const getLocalStorageTotal = function (total, noMesa) {
-  return localStorage.getItem(`mesa${noMesa}T`, total);
-};
-
 let array = [];
 
 const getLocalStorageConsumido = function (noMesa, comida) {
@@ -267,6 +259,7 @@ const totalC = function () {
 };
 
 const guardarCantidad = function (noMesa) {
+  // ventaTacos = [tacos].map(ele => ele.value);
   tacos.forEach(function (element) {
     ventaTacos.push(element.value);
     localStorage.setItem(`mesa${noMesa}Tacos`, JSON.stringify(ventaTacos));
@@ -303,7 +296,6 @@ const guardarCantidad = function (noMesa) {
     );
   });
 };
-
 const setearInputsFromLS = function (arrayk, comida) {
   if (arrayk !== null) {
     for (let i = 0; i < arrayk.length; i++) {
@@ -364,10 +356,21 @@ const anadirTicket = function (noMesa) {
   for (let i = 0; i < tacos.length; i++) {
     if (tacos[i] != 0) {
       let fila = tabla.insertRow();
-      let celda1 = fila.insertCell();
-      celda1.innerHTML = `Taco ${carnes.get(i)}`;
       let celda2 = fila.insertCell();
       celda2.innerHTML = tacos[i];
+      //celda2.classList.add('centrar-contenido'); // Agregamos la clase "centrar-contenido" a la celda
+      let celda1 = fila.insertCell();
+      celda1.innerHTML = `Taco ${carnes.get(i)}`;
+
+      let celda4 = fila.insertCell();
+      if (i === 7) {
+        celda4.innerHTML = `$25`;
+      } else if (i === 0 || i === 1) {
+        celda4.innerHTML = `$15`;
+      } else {
+        celda4.innerHTML = `$20`;
+      }
+
       let celda3 = fila.insertCell();
       if (i === 7) {
         celda3.innerHTML = `$${tacos[i] * 25}`;
@@ -387,10 +390,20 @@ const anadirTicket2 = function (noMesa) {
   for (let i = 0; i < tortas.length; i++) {
     if (tortas[i] != 0) {
       let fila = tabla.insertRow();
-      let celda1 = fila.insertCell();
-      celda1.innerHTML = `Torta ${carnes.get(i)}`;
       let celda2 = fila.insertCell();
       celda2.innerHTML = tortas[i];
+      let celda1 = fila.insertCell();
+      celda1.innerHTML = `Torta ${carnes.get(i)}`;
+
+      let celda4 = fila.insertCell();
+      if (i === 7) {
+        celda4.innerHTML = `$65`;
+      } else if (i === 0 || i === 1) {
+        celda4.innerHTML = `$50`;
+      } else {
+        celda4.innerHTML = `$60`;
+      }
+
       let celda3 = fila.insertCell();
       if (i === 7) {
         celda3.innerHTML = `$${tortas[i] * 65}`;
@@ -410,10 +423,20 @@ const anadirTicket3 = function (noMesa) {
   for (let i = 0; i < quesadillas.length; i++) {
     if (quesadillas[i] != 0) {
       let fila = tabla.insertRow();
-      let celda1 = fila.insertCell();
-      celda1.innerHTML = `Quesadilla ${carnes.get(i)}`;
       let celda2 = fila.insertCell();
       celda2.innerHTML = quesadillas[i];
+      let celda1 = fila.insertCell();
+      celda1.innerHTML = `Quesadilla ${carnes.get(i)}`;
+
+      let celda4 = fila.insertCell();
+      if (i === 7) {
+        celda4.innerHTML = `$80`;
+      } else if (i === 0 || i === 1) {
+        celda4.innerHTML = `$65`;
+      } else {
+        celda4.innerHTML = `$75`;
+      }
+
       let celda3 = fila.insertCell();
       if (i === 7) {
         celda3.innerHTML = `$${quesadillas[i] * 80}`;
@@ -433,10 +456,20 @@ const anadirTicket4 = function (noMesa) {
   for (let i = 0; i < gringa.length; i++) {
     if (gringa[i] != 0) {
       let fila = tabla.insertRow();
-      let celda1 = fila.insertCell();
-      celda1.innerHTML = `Gringa ${carnes.get(i)}`;
       let celda2 = fila.insertCell();
       celda2.innerHTML = gringa[i];
+      let celda1 = fila.insertCell();
+      celda1.innerHTML = `Gringa ${carnes.get(i)}`;
+
+      let celda4 = fila.insertCell();
+      if (i === 7) {
+        celda4.innerHTML = `$140`;
+      } else if (i === 0 || i === 1) {
+        celda4.innerHTML = `$120`;
+      } else {
+        celda4.innerHTML = `$130`;
+      }
+
       let celda3 = fila.insertCell();
       if (i === 7) {
         celda3.innerHTML = `$${gringa[i] * 140}`;
@@ -456,10 +489,14 @@ const anadirTicket5 = function (noMesa) {
   for (let i = 0; i < ext.length; i++) {
     if (ext[i] != 0) {
       let fila = tabla.insertRow();
-      let celda1 = fila.insertCell();
-      celda1.innerHTML = `${extrasMap.get(i)}`;
       let celda2 = fila.insertCell();
       celda2.innerHTML = ext[i];
+      let celda1 = fila.insertCell();
+      celda1.innerHTML = `${extrasMap.get(i)}`;
+
+      let celda4 = fila.insertCell();
+      celda4.innerHTML = `$${pricesExt[i]}`;
+
       let celda3 = fila.insertCell();
       celda3.innerHTML = `$${ext[i] * pricesExt[i]}`;
     }
@@ -485,10 +522,14 @@ const anadirTicket6 = function (noMesa) {
   for (let i = 0; i < dodoBurger.length; i++) {
     if (dodoBurger[i] != 0) {
       let fila = tabla.insertRow();
-      let celda1 = fila.insertCell();
-      celda1.innerHTML = `${mapDogosYBurger.get(i)}`;
       let celda2 = fila.insertCell();
       celda2.innerHTML = dodoBurger[i];
+      let celda1 = fila.insertCell();
+      celda1.innerHTML = `${mapDogosYBurger.get(i)}`;
+
+      let celda4 = fila.insertCell();
+      celda4.innerHTML = `$${mapPrice.get(i)}`;
+
       let celda3 = fila.insertCell();
       celda3.innerHTML = `$${dodoBurger[i] * mapPrice.get(i)}`;
     }
@@ -503,10 +544,14 @@ const anadirTicket7 = function (noMesa) {
   for (let i = 0; i < bebidas.length; i++) {
     if (bebidas[i] != 0) {
       let fila = tabla.insertRow();
-      let celda1 = fila.insertCell();
-      celda1.innerHTML = `${bebidasMap.get(i)}`;
       let celda2 = fila.insertCell();
       celda2.innerHTML = bebidas[i];
+      let celda1 = fila.insertCell();
+      celda1.innerHTML = `${bebidasMap.get(i)}`;
+
+      let celda4 = fila.insertCell();
+      celda4.innerHTML = `$${bebidasPrice.get(i)}`;
+
       let celda3 = fila.insertCell();
       celda3.innerHTML = `$${bebidas[i] * bebidasPrice.get(i)}`;
     }
@@ -521,10 +566,14 @@ const anadirTicket8 = function (noMesa) {
   for (let i = 0; i < bebidasA.length; i++) {
     if (bebidasA[i] != 0) {
       let fila = tabla.insertRow();
-      let celda1 = fila.insertCell();
-      celda1.innerHTML = `${mapAlcholicas.get(i)}`;
       let celda2 = fila.insertCell();
       celda2.innerHTML = bebidasA[i];
+      let celda1 = fila.insertCell();
+      celda1.innerHTML = `${mapAlcholicas.get(i)}`;
+
+      let celda4 = fila.insertCell();
+      celda4.innerHTML = `$${mapAlcholicasPrice.get(i)}`;
+
       let celda3 = fila.insertCell();
       celda3.innerHTML = `$${bebidasA[i] * mapAlcholicasPrice.get(i)}`;
     }
@@ -535,7 +584,7 @@ function imprimirContenido() {
   const contenido = document.querySelector('.ticket').innerHTML;
 
   // Crear un nuevo documento en una ventana de impresión
-  const ventanaImpresion = window.open('', '', 'height=500,width=700');
+  const ventanaImpresion = window.open('', '', 'height=500,width=280');
   ventanaImpresion.document.title = 'TACOS EL CHINO';
 
   // Crear elementos para el contenido del ticket y añadirlos al cuerpo del documento de impresión
@@ -548,28 +597,41 @@ function imprimirContenido() {
 
   //
   const addres = document.createElement('p');
-  addres.textContent =
-    'Vicente Suárez 264, Villas Alameda, 28984 Villa de Álvarez, Col., México';
+  addres.textContent = `Vicente Suárez 264, Villas Alameda, 28984`;
   addres.style.textAlign = 'center';
   body.appendChild(addres);
 
+  const estado = document.createElement('p');
+  estado.textContent = `Villa de Álvarez, Col., México`;
+  estado.style.textAlign = 'center';
+  body.appendChild(estado);
+
   //Obtenemos Fecha
-  const today = new Date();
-  const dateTime = today.toLocaleString('fr-FR', { hour12: false });
+  const date = Intl.DateTimeFormat('es-MX', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+  }).format(new Date());
+
   const timeDate = document.createElement('p');
-  timeDate.textContent = `Fecha: ${dateTime}`;
+  timeDate.textContent = `${date}`;
   timeDate.style.textAlign = 'center';
   body.appendChild(timeDate);
 
   //
   const renglones = document.createElement('p');
-  renglones.textContent = ' -'.padStart(98, ' - ');
+  renglones.textContent = ' -'.padStart(80, ' - ');
 
   //Separamos Contenido
   body.appendChild(renglones);
 
   const ticketContent = document.createElement('div');
   ticketContent.innerHTML = contenido;
+  ticketContent.style.textAlign = 'center';
   body.appendChild(ticketContent);
 
   const totalCuenta = document.createElement('h3');
@@ -578,7 +640,7 @@ function imprimirContenido() {
   body.appendChild(totalCuenta);
 
   const renglones2 = document.createElement('p');
-  renglones2.textContent = ' -'.padStart(98, ' - ');
+  renglones2.textContent = ' -'.padStart(80, ' - ');
   //Separamos contenido
   body.appendChild(renglones2);
 
@@ -617,15 +679,6 @@ const tickets = function (noMesa) {
   anadirTicket7(noMesa + 1);
   anadirTicket8(noMesa + 1);
 };
-
-// for (let index of showModal.keys()) {
-//   ticketBtn.addEventListener('click', function () {
-//     tickets(index + 1);
-//     imprimirContenido();
-//   });
-// }
-
-//ticketBtn.addEventListener('click', imprimirContenido);
 
 const borrarBtn = document.querySelector('.borrar');
 
