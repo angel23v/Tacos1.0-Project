@@ -1,87 +1,87 @@
 html,
 * {
+  font-size: 63%;
   margin: 0;
   padding: 0;
-  font-size: 63%;
   user-select: none;
 }
 
 body {
-  font-family: sans-serif;
-  color: #252525;
   background: rgb(255, 255, 255);
+  color: #252525;
+  font-family: sans-serif;
 }
 header {
-  display: flex;
-  justify-content: center;
-  text-align: center;
+  -moz-box-shadow: -2px 4px 5px 4px rgba(87, 87, 87, 1);
+  -webkit-box-shadow: -2px 4px 5px 4px rgba(87, 87, 87, 1);
   align-items: center;
-  height: 125px;
   background-color: rgba(0, 0, 0, 0.883);
   border-bottom: 5px solid black;
   box-shadow: -2px 4px 5px 4px rgba(87, 87, 87, 1);
-  -webkit-box-shadow: -2px 4px 5px 4px rgba(87, 87, 87, 1);
-  -moz-box-shadow: -2px 4px 5px 4px rgba(87, 87, 87, 1);
+  display: flex;
+  height: 125px;
+  justify-content: center;
+  text-align: center;
 }
 /* contenedores */
 .contenedor-main {
   background-color: rgba(255, 0, 0, 0);
-  height: 500px;
   display: flex;
+  height: 500px;
   justify-content: center;
 }
 .space-divs {
   width: 200px;
 }
 .contenedor-precios {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 .contenedor {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 .contenedor2 {
   display: flex;
+  height: 5rem;
   justify-content: center;
   margin-right: 5px;
-  height: 5rem;
 }
 .contenedor3 {
   display: flex;
   justify-content: center;
 }
 .contenedor4 {
+  background-color: rgb(255, 255, 255);
   display: flex;
   flex-wrap: wrap;
-  background-color: rgb(255, 255, 255);
 }
 
 /*contenidos */
 .contenido1 {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   display: flex;
   flex-direction: row;
-  width: 100vh;
   height: 110px;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  width: 100vh;
 }
 .contenido2 {
   display: flex;
   flex-direction: row;
-  width: 100vh;
   height: 105px;
+  width: 100vh;
 }
 .contenido3 {
-  display: flex;
-  flex-direction: row;
-  width: 100vh;
-  height: 110px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  height: 110px;
+  width: 100vh;
 }
 .parte-baja-hidden {
   display: flex;
@@ -89,44 +89,44 @@ header {
 }
 /* Estilos de tablas*/
 table {
-  border: 1px solid black;
   border-radius: 5px;
+  border: 1px solid black;
   padding: 1px;
 }
 th {
-  font-family: sans-serif;
   background-color: #333;
-  color: rgb(206, 192, 192);
-  height: 10px;
-  font-size: 15px;
   border-radius: 3px;
+  color: rgb(206, 192, 192);
+  font-family: sans-serif;
+  font-size: 15px;
+  height: 10px;
 }
 td {
-  text-align: center;
-  font-family: sans-serif;
   color: black;
+  font-family: sans-serif;
   font-size: 20px;
   padding: 0px;
+  text-align: center;
 }
 input[type='number'] {
+  border-bottom: 2px solid black;
   border: none;
   font-size: large;
+  height: 30px;
   text-align: center;
   width: 40px;
-  height: 30px;
-  border-bottom: 2px solid black;
 }
 
 /* CLASSES TO MAKE MODAL WORK */
 .close-modal {
-  position: absolute;
-  top: 1.2rem;
-  right: 2rem;
-  font-size: 5rem;
+  background: none;
+  border: none;
   color: #333;
   cursor: pointer;
-  border: none;
-  background: none;
+  font-size: 5rem;
+  position: absolute;
+  right: 2rem;
+  top: 1.2rem;
 }
 
 .hidden {
@@ -134,43 +134,43 @@ input[type='number'] {
 }
 
 .modal {
+  -moz-box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
+  -webkit-box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
+  left: 50%;
+  padding: 2% 6%;
   position: absolute;
   top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(255, 255, 255);
-  padding: 2% 6%;
   width: 800px;
-  border-radius: 5px;
-  -webkit-box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
-  -moz-box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
-  box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
   z-index: 10;
 }
 
 .modal2 {
+  -moz-box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
+  -webkit-box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
+  left: 50%;
+  padding: 2% 6%;
   position: absolute;
   top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(255, 255, 255);
-  padding: 2% 6%;
   width: 800px;
-  border-radius: 5px;
-  -webkit-box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
-  -moz-box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
-  box-shadow: -4px 4px 15px 0px rgba(0, 0, 0, 0.39);
   z-index: 10;
 }
 
 .overlay {
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(3px);
   z-index: 5;
 }
 
@@ -189,40 +189,40 @@ input[type='number'] {
 }
 /*//!botones estilos*/
 .btnMain {
-  margin: 20px;
-  display: inline-block;
-  font-size: 2rem;
-  font-weight: 500;
-  width: 100px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
   background-color: #000000;
   border-color: 1px solid grey;
   border-radius: 15px;
   box-shadow: 0 9px #999;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 20px;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  width: 100px;
 }
 .efect:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 .btnMD {
-  display: inline-block;
-  font-size: 2rem;
-  font-weight: 500;
-  width: 100px;
-  height: 70px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
   background-color: #000000;
   border-color: 1px solid grey;
   border-radius: 15px;
   box-shadow: 0 9px #999;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 500;
+  height: 70px;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  width: 100px;
 }
 .btnMD:active {
   box-shadow: 0 5px #666;
@@ -231,15 +231,15 @@ input[type='number'] {
 
 /*//!Estilos extras*/
 img {
-  width: 300px;
-  height: 300px;
   border-radius: 50px;
+  height: 300px;
   pointer-events: none;
+  width: 300px;
 }
 .total2 {
+  font-size: 30px;
   margin-left: 10px;
   margin-top: 22px;
-  font-size: 30px;
 }
 .space_lefth {
   width: 0.2cm;
@@ -274,9 +274,9 @@ img {
 }
 
 .persona {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin: 20px;
 }
 
@@ -291,16 +291,16 @@ img {
 }
 
 .persona p {
-  font-size: 16px;
   color: #777;
+  font-size: 16px;
   text-align: center;
 }
 
 .contacto {
-  margin-top: 10px;
-  list-style: none;
   display: flex;
   justify-content: center;
+  list-style: none;
+  margin-top: 10px;
 }
 
 .contacto li:not(:last-child) {
@@ -309,9 +309,9 @@ img {
 
 .contacto li a {
   color: #444;
+  font-size: 15px;
   font-weight: bold;
   text-decoration: none;
-  font-size: 15px;
 }
 
 .contacto li a:hover {
@@ -319,8 +319,8 @@ img {
 }
 
 .dev {
-  text-align: center;
   font-size: 19px;
+  text-align: center;
 }
 
 .centrar-contenido {
