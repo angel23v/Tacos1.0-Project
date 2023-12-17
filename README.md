@@ -42,7 +42,7 @@ To use the project just open the html in your browser
 
 # Credits
 
-Co-Author: DevLuis123 <lgutierrez23@ucol.mx>
+Co-Author: DevLuis123 <luisgutierrez26489@gmail.com>
 
 # Badges
 
