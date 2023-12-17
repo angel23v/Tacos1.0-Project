@@ -38,7 +38,11 @@ To run the project in your terminal go to the path project run "code ." & copy t
 
 # How to Use the Project.
 
-To use the project just open the html in your browser
+To use the project just open your browser and paste:
+
+```
+https://angel23v.github.io/Tacos1.0-Project/
+```
 
 # Credits
 
